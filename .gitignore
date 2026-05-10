@@ -24,3 +24,9 @@ pnpm-debug.log*
 
 # Vite
 .vite
+
+# Generated media
+promo-output/
+
+# TypeScript
+*.tsbuildinfo

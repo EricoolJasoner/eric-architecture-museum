@@ -12,13 +12,13 @@ export function LandmarkCard({ landmark }: { landmark: Landmark }) {
 
   const baseClasses =
     theme === 'dark'
-      ? 'bg-white/5 border-white/10 hover:bg-white/10'
-      : 'bg-white/60 border-slate-200/60 hover:bg-white'
+      ? 'bg-white/[0.045] border-white/10 hover:bg-white/[0.075]'
+      : 'bg-white/70 border-slate-200/70 hover:bg-white'
 
   const activeClasses =
     theme === 'dark'
-      ? 'bg-amber-400/15 border-amber-400/40 hover:bg-amber-400/20'
-      : 'bg-amber-500/10 border-amber-500/40 hover:bg-amber-500/15'
+      ? 'bg-amber-300/12 border-amber-300/45 hover:bg-amber-300/16'
+      : 'bg-slate-950 text-white border-slate-950 hover:bg-slate-900'
 
   const titleClass = theme === 'dark' ? 'text-slate-100' : 'text-slate-900'
   const metaClass = theme === 'dark' ? 'text-slate-400' : 'text-slate-500'
@@ -31,7 +31,7 @@ export function LandmarkCard({ landmark }: { landmark: Landmark }) {
       whileTap={isLocked ? {} : { scale: 0.98 }}
       onClick={() => !isLocked && setActiveLandmark(landmark.id)}
       disabled={isLocked}
-      className={`w-full text-left p-3 rounded-xl border transition-colors ${
+      className={`w-full text-left p-3 rounded-lg border transition-colors ${
         isLocked ? 'opacity-40 cursor-not-allowed' : 'cursor-pointer'
       } ${isActive ? activeClasses : baseClasses}`}
     >
@@ -47,7 +47,7 @@ export function LandmarkCard({ landmark }: { landmark: Landmark }) {
             <span>{landmark.type}</span>
           </div>
           {isLocked && (
-            <div className={`text-[10px] mt-1.5 inline-block px-2 py-0.5 rounded-full ${lockClass}`}>
+            <div className={`text-[10px] mt-1.5 inline-block px-2 py-0.5 rounded-md ${lockClass}`}>
               Coming Soon
             </div>
           )}
